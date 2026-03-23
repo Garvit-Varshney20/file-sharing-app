@@ -3,12 +3,10 @@ const jwt = require("jsonwebtoken");
 module.exports = function(req, res, next) {
   const authHeader = req.headers.authorization;
 
-  // Check if header exists
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return res.status(401).send("Access denied ❌");
   }
 
-  // Extract token
   const token = authHeader.split(" ")[1];
 
   try {
