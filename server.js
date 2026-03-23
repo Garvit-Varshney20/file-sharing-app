@@ -10,17 +10,17 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// 🔥 IMPORTANT: frontend serve karne ke liye
+
 app.use(express.static("frontend"));
 
 app.use("/api/auth", require("./routes/auth"));
 
-// MongoDB connect
+
 mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log("MongoDB connected ✅"))
 .catch(err => console.log(err));
 
-// Test route
+
 app.get("/", (req, res) => {
   res.send("Server is running 🚀");
 });
