@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Auth</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="auth-container">
+
+  <h1 style="color: white;">🚀 File Sharing App</h1>
+
+  <!-- TOGGLE TABS -->
+  <div class="tabs">
+    <button id="loginTab" class="active" onclick="showLogin()">Login</button>
+    <button id="signupTab" onclick="showSignup()">Signup</button>
+  </div>
+
+  <!-- ================= LOGIN ================= -->
+  <div id="loginBox">
+
+    <input type="email" id="loginEmail" placeholder="Enter Email">
+
+    <div class="password-box">
+      <input type="password" id="loginPassword" placeholder="Enter Password">
+      <span onclick="togglePassword('loginPassword')">👁️</span>
+    </div>
+
+    <label class="remember">
+      <input type="checkbox" id="rememberMe"> Remember Me
+    </label>
+
+    <!-- ✅ LOGIN MESSAGE -->
+    <p id="loginMsg" class="msg error"></p>
+
+    <button onclick="login()">Login</button>
+
+  </div>
+
+  <!-- ================= SIGNUP ================= -->
+  <div id="signupBox" style="display: none;">
+
+    <input type="email" id="signupEmail" placeholder="Enter Email">
+
+    <div class="password-box">
+      <input type="password" id="signupPassword" placeholder="Create Password">
+      <span onclick="togglePassword('signupPassword')">👁️</span>
+    </div>
+
+    <!-- ✅ SIGNUP MESSAGE -->
+    <p id="signupMsg" class="msg success"></p>
+
+    <button onclick="signup()">Register</button>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

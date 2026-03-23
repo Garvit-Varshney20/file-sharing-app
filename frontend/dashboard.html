@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- 🔥 NAVBAR -->
+<div class="navbar">
+
+  <!-- USER EMAIL -->
+  <span id="userEmail">User</span> 
+ 
+
+  <!-- NAV LINKS -->
+  <a href="#uploadSection">Upload</a>
+  <a href="#filesSection">Your Files</a>
+
+  <!-- DROPDOWN -->
+  <div class="dropdown">
+    <button onclick="toggleDropdown()">More ▼</button>
+
+    <div id="dropdownMenu" class="dropdown-content">
+      <p id="detailEmail"></p>
+      <p id="detailPassword"></p>
+    </div>
+  </div>
+
+  <!-- LOGOUT -->
+  <button onclick="logout()">Logout</button>
+
+</div>
+
+<!-- ================= UPLOAD SECTION ================= -->
+<div class="section" id="uploadSection">
+
+  <h2>📤 Upload Files</h2>
+
+  <input type="file" id="files" multiple>
+  <button onclick="uploadFiles()">Upload</button>
+
+</div>
+
+<!-- ================= FILE LIST ================= -->
+<div class="section" id="filesSection">
+
+  <h2>📂 Your Files</h2>
+
+  <div id="fileList"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
