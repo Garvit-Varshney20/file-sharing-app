@@ -1,46 +1,48 @@
-📁 Cloud Based File Sharing App :
+# 📁 Cloud Based File Sharing App
 
-A full-stack file sharing web application built with Node.js, Express, MongoDB, and AWS S3.
+A full-stack cloud based file sharing web application built with Node.js, Express, MongoDB, and AWS S3.
 
-🚀 Features
-- User Authentication (Login / Signup)
-- File Upload to AWS S3
-- File Preview & Download
-- Secure Routes using JWT
+---
 
-🛠️ Tech Stack
-- Frontend: HTML, CSS, JavaScript
-- Backend: Node.js, Express
-- Database: MongoDB Atlas
-- Storage: AWS S3
+## 🚀 Features
 
-📂 Project Structure
-project/
+- 🔐 **User Authentication** - Secure login/signup using JWT (JSON Web Tokens)
+- 📤 **File Upload** - Upload files from your device & supports multiple file types
+- 📥 **File Download** - Download uploaded files anytime
+- 🔗 **Shareable Links** - Generate unique links to share files with others
+- 👀 **File Preview** - Preview supported files before downloading
+- ☁️ **Cloud Storage Support** - Store files using AWS S3 
+
+---
+
+## 🛠️ Tech Stack
+
+- Frontend: HTML, CSS, JavaScript  
+- Backend: Node.js, Express  
+- Database: MongoDB Atlas  
+- Storage: AWS S3  
+- Authentication: JWT (JSON Web Token)
+
+---
+
+## 📂 Project Structure
+```
+file-sharing-app/
 │
-├── frontend/                
-│   ├── index.html
-│   ├── style.css
-│   ├── script.js
-│   └── i.jpg
+├── server/
+│ ├── controllers/
+│ ├── middleware/
+│ ├── models/
+│ ├── routes/
+│ ├── config/
+│ └── server.js
 │
-├── models/                 
-│   ├── User.js
-│   └── File.js
+├── client/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
 │
-├── routes/                
-│   └── auth.js
-│
-├── middleware/              
-│   └── authMiddleware.js
-│
-├── uploads/                  
-│
-├── node_modules/             
-│
-├── .env                      
-├── .gitignore                
-│
-├── package.json              
-├── package-lock.json         
-│
-├── server.js                
+├── .env
+├── package.json
+└── README.md
+```
