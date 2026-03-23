@@ -1,8 +1,5 @@
 let token = localStorage.getItem("token") || "";
 
-// ===== AUTH UI FUNCTIONS =====
-
-// TOGGLE LOGIN/SIGNUP
 function showLogin() {
   document.getElementById("loginBox").style.display = "block";
   document.getElementById("signupBox").style.display = "none";
@@ -25,13 +22,11 @@ function showSignup() {
   document.getElementById("signupMsg").innerText = "";
 }
 
-// PASSWORD TOGGLE
 function togglePassword(id) {
   const input = document.getElementById(id);
   input.type = input.type === "password" ? "text" : "password";
 }
 
-// ===== LOGIN =====
 async function login() {
   try {
     const email = document.getElementById("loginEmail").value;
@@ -57,7 +52,6 @@ async function login() {
     const data = await res.json();
     token = data.token;
 
-    // store user data
     localStorage.setItem("userEmail", email);
     localStorage.setItem("userPassword", password);
 
@@ -74,7 +68,6 @@ async function login() {
   }
 }
 
-// ===== SIGNUP =====
 async function signup() {
   try {
     const email = document.getElementById("signupEmail").value;
@@ -110,19 +103,16 @@ async function signup() {
   }
 }
 
-// ===== LOGOUT =====
 function logout() {
   localStorage.clear();
   sessionStorage.clear();
   window.location.href = "index.html";
 }
 
-// ===== TOKEN =====
 function getToken() {
   return localStorage.getItem("token") || sessionStorage.getItem("token");
 }
 
-// ===== UPLOAD =====
 async function uploadFiles() {
   try {
     const files = document.getElementById("files").files;
@@ -152,7 +142,6 @@ async function uploadFiles() {
   }
 }
 
-// ===== GET FILES =====
 async function getFiles() {
   try {
     const res = await fetch("/api/auth/files", {
@@ -172,7 +161,6 @@ async function getFiles() {
 
     files.forEach(file => {
 
-      // ✅ CLEAN FILE NAME (remove timestamp)
       const cleanName = file.filename.includes("-")
         ? file.filename.split("-").slice(1).join("-")
         : file.filename;
@@ -208,7 +196,6 @@ async function getFiles() {
   }
 }
 
-// ===== DELETE =====
 async function deleteFile(id) {
   try {
     await fetch(`/api/auth/delete/${id}`, {
@@ -225,18 +212,15 @@ async function deleteFile(id) {
   }
 }
 
-// ===== COPY =====
 function copyLink(link) {
   navigator.clipboard.writeText(link);
 }
 
-// ===== DROPDOWN =====
 function toggleDropdown() {
   const menu = document.getElementById("dropdownMenu");
   menu.style.display = menu.style.display === "block" ? "none" : "block";
 }
 
-// ===== AUTO LOAD =====
 window.onload = () => {
 
   if (window.location.pathname.includes("dashboard.html")) {
@@ -249,7 +233,6 @@ window.onload = () => {
 
     const payload = JSON.parse(atob(token.split('.')[1]));
 
-    // ✅ FIX: show email instead of ID
     const email = payload.email || localStorage.getItem("userEmail");
 
     document.getElementById("userEmail").innerText = "👤 " + email;
