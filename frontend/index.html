@@ -10,13 +10,11 @@
 
   <h1 style="color: white;">🚀 File Sharing App</h1>
 
-  <!-- TOGGLE TABS -->
   <div class="tabs">
     <button id="loginTab" class="active" onclick="showLogin()">Login</button>
     <button id="signupTab" onclick="showSignup()">Signup</button>
   </div>
 
-  <!-- ================= LOGIN ================= -->
   <div id="loginBox">
 
     <input type="email" id="loginEmail" placeholder="Enter Email">
@@ -29,15 +27,11 @@
     <label class="remember">
       <input type="checkbox" id="rememberMe"> Remember Me
     </label>
-
-    <!-- ✅ LOGIN MESSAGE -->
     <p id="loginMsg" class="msg error"></p>
-
     <button onclick="login()">Login</button>
 
   </div>
 
-  <!-- ================= SIGNUP ================= -->
   <div id="signupBox" style="display: none;">
 
     <input type="email" id="signupEmail" placeholder="Enter Email">
@@ -47,13 +41,10 @@
       <span onclick="togglePassword('signupPassword')">👁️</span>
     </div>
 
-    <!-- ✅ SIGNUP MESSAGE -->
     <p id="signupMsg" class="msg success"></p>
-
     <button onclick="signup()">Register</button>
 
   </div>
-
 </div>
 
 <script src="script.js"></script>
